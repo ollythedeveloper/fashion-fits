@@ -1,6 +1,34 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
+import FashionFitsContext from '../FashionFitsContext';
 
 export default function Home() {
+    const { profiles, regions , submitUserProfile} = useContext(FashionFitsContext)
+
+    const [selectProfile, setSelectProfile] = useState('')
+    const [selectRegion, set]
+
+    // console.log(selectProfile)
+
+    const profileOpts = profiles.map(
+        (profile, i) => <option value={profile.id} key={i}>{profile.name}</option>
+    );
+
+    const regionOpts = regions.map(
+        (region, i) => <option value={region.id} key={i}>{region.country}</option>
+    );
+
+    const handleSubmit = e => {
+        e.preventDefault();
+        console.log(selectProfile)
+    }
+
+    const handleChangeRegion = e => {
+        setSelectProfile({region: e.target.value})
+    }
+    const handleChangeProfile = e => {
+        setSelectProfile({profile: e.target.value})
+    }
+
     return (
         <div className='Home'>
             <section className="Header">
@@ -13,20 +41,19 @@ export default function Home() {
                 <p>Letter to numbers...</p>
             </section>
             <section className="Form">
-                <form className="Gender-Region-Form">
+                <form className="Gender-Region-Form" onSubmit={handleSubmit}>
                     <div className="Gender-select">
-                        <label for="gender">Gender: </label>
-                        <select name="gender" id="gender">
-                            <option value="female">Female</option>
-                            <option value="male">Male</option>
+                        <label htmlFor="gender">Gender: </label>
+                        <select name="gender" id="gender" onChange={handleChangeProfile}>
+                            {/* <option value=''>Select gender...</option> */}
+                            {profileOpts}
                         </select>
                     </div>
                     <div className="Region-select">
-                        <label for="region">Region: </label>
-                        <select name="region" id="region">
-                            <option value="US">US</option>
-                            <option value="UK">UK</option>
-                            <option value="Japan">Japan</option>
+                        <label htmlFor="region">Region: </label>
+                        <select name="region" id="region" onChange={handleChangeRegion}>
+                            {/* <option value=''>Select region...</option> */}
+                            {regionOpts}
                         </select>
                     </div>
                     <div className="Button-container">

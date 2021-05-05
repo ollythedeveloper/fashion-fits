@@ -1,4 +1,5 @@
 import React from 'react';
+import Results from '../Results/Results';
 
 export default function MensForm() {
     return (
@@ -25,18 +26,21 @@ export default function MensForm() {
                     </div>
                     <div className="Convert-select">
                         <p>Convert to: </p>
-                        <label for="convert_region">Region: </label>
+                        <label htmlFor="convert_region">Region: </label>
                         <select name="convert_region" id="convert_region">
                             <option value="US">US</option>
                             <option value="UK" selected>UK</option>
                             <option value="Japan">Japan</option>
                         </select>
                     </div>
-                    <div className="button-container">
+                    {/* <div className="button-container">
                         <button type="submit">Submit</button>
-                    </div>
+                    </div> */}
 
                 </form>
+            </section>
+            <section className="Mens-results">
+                <Results />
             </section>
         </div>
     );

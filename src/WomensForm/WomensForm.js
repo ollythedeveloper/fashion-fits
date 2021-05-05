@@ -25,16 +25,16 @@ export default function WomensForm() {
                     </div>
                     <div className="Convert-select">
                         <p>Convert to: </p>
-                        <label for="convert_region">Region: </label>
+                        <label htmlFor="convert_region">Region: </label>
                         <select name="convert_region" id="convert_region">
                             <option value="US">US</option>
                             <option value="UK">UK</option>
                             <option value="Japan" selected>Japan</option>
                         </select>
                     </div>
-                    <div className="button-container">
+                    {/* <div className="button-container">
                         <button type="submit">Submit</button>
-                    </div>
+                    </div> */}
                 </form>
             </section>
             <section className="Womens-results">
