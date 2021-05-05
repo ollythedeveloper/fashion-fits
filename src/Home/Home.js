@@ -2,12 +2,19 @@ import React, { useContext, useState } from 'react';
 import FashionFitsContext from '../FashionFitsContext';
 
 export default function Home() {
-    const { profiles, regions , submitUserProfile} = useContext(FashionFitsContext)
+    const { profiles, regions, submitUserProfile } = useContext(FashionFitsContext)
 
     const [selectProfile, setSelectProfile] = useState('')
-    const [selectRegion, set]
+    const [selectRegion, setSelectRegion] = useState('')
+    const selectedFullProfile = [
+        {
+            profileId: selectProfile,
+            regionId: selectRegion
+        }
+    ]
 
     // console.log(selectProfile)
+
 
     const profileOpts = profiles.map(
         (profile, i) => <option value={profile.id} key={i}>{profile.name}</option>
@@ -19,14 +26,14 @@ export default function Home() {
 
     const handleSubmit = e => {
         e.preventDefault();
-        console.log(selectProfile)
+        console.log(selectedFullProfile)
     }
 
     const handleChangeRegion = e => {
-        setSelectProfile({region: e.target.value})
+        setSelectRegion(e.target.value)
     }
     const handleChangeProfile = e => {
-        setSelectProfile({profile: e.target.value})
+        setSelectProfile(e.target.value)
     }
 
     return (

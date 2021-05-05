@@ -13,7 +13,8 @@ class App extends Component {
     profiles: [],
     regions: [],
     womens: [],
-    mens: []
+    mens: [],
+    userProfile: []
   };
 
   directToFemaleForm = () => {
