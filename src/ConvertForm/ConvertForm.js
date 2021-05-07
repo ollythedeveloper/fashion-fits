@@ -1,11 +1,32 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import FashionFitsContext from '../FashionFitsContext';
+import { findProfile } from '../fit-helpers';
 import Results from '../Results/Results';
 
-export default function WomensForm() {
+export default function ConvertForm() {
+    const { userProfile, profiles, letterSizes, regions } = useContext(FashionFitsContext)
+
+    const userId = userProfile.profileId
+    const userRegion = userProfile.regionId
+    const userSelectedProfile = findProfile(profiles, userId, userRegion)
+
+    const numberOpts = userSelectedProfile.numberSizes.map(
+        (numberSize, i) => <option value={i} key={i}>{numberSize}</option>
+    )
+    
+    const letterOpts = letterSizes.map(
+        (letterSize, i) => <option value={i} key={i}>{letterSize}</option>
+    )
+
+    const regionOpts = regions.map(
+        (region, i) => <option value={region.id} key={i}>{region.country}</option>
+    );
+
     return (
         <div className='WomensForm'>
             <section className="User_fit">
-                <h1>Your Fit: USA - Womens</h1>
+                <h1>Your Fit: {userSelectedProfile.fit}</h1>
+                <p>{userSelectedProfile.category}</p>
             </section>
             <section className="Conversion">
                 <form className="Womens-convert-form">
@@ -14,22 +35,15 @@ export default function WomensForm() {
                         <input type="radio" name="size-type" id="size-type" value="number" />Number
                         {' '}
                         <select name="known-size" id="known-size">
-                            <option value="xs">XS</option>
-                            <option value="s" selected>S</option>
-                            <option value="m">M</option>
-                            <option value="l">L</option>
-                            <option value="xl">XL</option>
-                            <option value="xxl">XXL</option>
-                            <option value="xxxl">XXXL</option>
+                            {letterOpts}
+                            {numberOpts}
                         </select>
                     </div>
                     <div className="Convert-select">
                         <p>Convert to: </p>
                         <label htmlFor="convert_region">Region: </label>
                         <select name="convert_region" id="convert_region">
-                            <option value="US">US</option>
-                            <option value="UK">UK</option>
-                            <option value="Japan" selected>Japan</option>
+                            {regionOpts}
                         </select>
                     </div>
                     {/* <div className="button-container">

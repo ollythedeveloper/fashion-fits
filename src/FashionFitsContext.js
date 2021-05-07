@@ -1,10 +1,12 @@
 import React from 'react';
 
 const FashionFitsContext = React.createContext({
-    profiles: [],
+    profileTypes: [],
     regions: [],
-    womens: [],
-    mens: [],
+    profiles: [],
+    letterSizes: [],
+    userProfile: [],
+    selectedProfile: () => {},
     submitUserProfile: () => {}
 
 })

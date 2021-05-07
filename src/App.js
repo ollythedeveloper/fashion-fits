@@ -2,24 +2,24 @@ import React, { Component } from 'react';
 import { Route, Switch, withRouter } from 'react-router-dom';
 import Nav from './Nav/Nav';
 import Home from './Home/Home';
-import WomensForm from './WomensForm/WomensForm';
-import MensForm from './MensForm/MensForm';
+import ConvertForm from './ConvertForm/ConvertForm';
 import Footer from './Footer/Footer';
 import store from './dummyStore';
 import FashionFitsContext from './FashionFitsContext';
 
 class App extends Component {
   state = {
-    profiles: [],
+    profileTypes: [],
+    letterSizes: [],
     regions: [],
-    womens: [],
+    profiles: [],
     mens: [],
     userProfile: []
   };
 
-  directToFemaleForm = () => {
+  directToConvertForm = () => {
     const { history } = this.props;
-    if (history) history.push('/womens-form');
+    if (history) history.push('/convert-form');
   };
 
   directToMaleForm = () => {
@@ -27,36 +27,44 @@ class App extends Component {
     if (history) history.push('/mens-form');
   };
 
+  handleSelectedProfile = (profileType, region) => {
+    this.setState({
+      userProfile: {
+        profileId: profileType,
+        regionId: region
+      }
+    })
+  }
+
   handleSubmitUserProfile = () => {
-    this.directToFemaleForm()
+    this.directToConvertForm()
   }
 
   componentDidMount() {
     this.setState({
-      womens: store.womens
-    });
+      letterSizes: store.letterSizes
+    })
     this.setState({
-      mens: store.mens
-    });
-    this.setState({
-      profiles: store.profiles
+      profileTypes: store.profileTypes
     })
     this.setState({
       regions: store.regions
+    })
+    this.setState({
+      profiles: store.profiles
     })
   }
 
   render() {
     const contextValue = {
-      profiles: this.state.profiles,
+      profileTypes: this.state.profileTypes,
       regions: this.state.regions,
-      womens: this.state.womens,
-      mens: this.state.mens,
+      profiles: this.state.profiles,
+      letterSizes: this.state.letterSizes,
+      userProfile: this.state.userProfile,
+      selectedProfile: this.handleSelectedProfile,
       submitUserProfile: this.handleSubmitUserProfile
     }
-
-    // console.log(this.state.mens)
-    // console.log(this.state.womens)
 
     return (
       <FashionFitsContext.Provider value={contextValue}>
@@ -67,8 +75,7 @@ class App extends Component {
           <main className="App__main">
             <Switch>
               <Route exact path='/' component={Home} />
-              <Route path='/womens-form' component={WomensForm} />
-              <Route path='/mens-form' component={MensForm} />
+              <Route path='/convert-form' component={ConvertForm} />
             </Switch>
           </main>
           <footer className="App__footer">

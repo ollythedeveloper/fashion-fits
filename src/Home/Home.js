@@ -2,22 +2,13 @@ import React, { useContext, useState } from 'react';
 import FashionFitsContext from '../FashionFitsContext';
 
 export default function Home() {
-    const { profiles, regions, submitUserProfile } = useContext(FashionFitsContext)
+    const { profileTypes, regions, submitUserProfile, selectedProfile } = useContext(FashionFitsContext)
 
     const [selectProfile, setSelectProfile] = useState('')
     const [selectRegion, setSelectRegion] = useState('')
-    const selectedFullProfile = [
-        {
-            profileId: selectProfile,
-            regionId: selectRegion
-        }
-    ]
 
-    // console.log(selectProfile)
-
-
-    const profileOpts = profiles.map(
-        (profile, i) => <option value={profile.id} key={i}>{profile.name}</option>
+    const profileOpts = profileTypes.map(
+        (profileType, i) => <option value={profileType.id} key={i}>{profileType.name}</option>
     );
 
     const regionOpts = regions.map(
@@ -26,7 +17,8 @@ export default function Home() {
 
     const handleSubmit = e => {
         e.preventDefault();
-        console.log(selectedFullProfile)
+        selectedProfile(selectProfile, selectRegion);
+        submitUserProfile();
     }
 
     const handleChangeRegion = e => {
@@ -51,15 +43,15 @@ export default function Home() {
                 <form className="Gender-Region-Form" onSubmit={handleSubmit}>
                     <div className="Gender-select">
                         <label htmlFor="gender">Gender: </label>
-                        <select name="gender" id="gender" onChange={handleChangeProfile}>
-                            {/* <option value=''>Select gender...</option> */}
+                        <select name="gender" id="gender" onChange={handleChangeProfile} required>
+                            <option value=''>Select</option>
                             {profileOpts}
                         </select>
                     </div>
                     <div className="Region-select">
                         <label htmlFor="region">Region: </label>
-                        <select name="region" id="region" onChange={handleChangeRegion}>
-                            {/* <option value=''>Select region...</option> */}
+                        <select name="region" id="region" onChange={handleChangeRegion} required>
+                            <option value=''>Select</option>
                             {regionOpts}
                         </select>
                     </div>
