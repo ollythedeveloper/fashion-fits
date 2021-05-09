@@ -6,9 +6,11 @@ const FashionFitsContext = React.createContext({
     profiles: [],
     letterSizes: [],
     userProfile: [],
+    selectedSize: Number,
     selectedProfile: () => {},
-    submitUserProfile: () => {}
-
+    submitUserProfile: () => {},
+    changeSize: () => {},
+    resetSelectedSize: () => {}
 })
 
 export default FashionFitsContext

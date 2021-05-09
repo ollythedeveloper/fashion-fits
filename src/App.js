@@ -13,8 +13,8 @@ class App extends Component {
     letterSizes: [],
     regions: [],
     profiles: [],
-    mens: [],
-    userProfile: []
+    userProfile: [],
+    selectedSize: 0
   };
 
   directToConvertForm = () => {
@@ -22,10 +22,11 @@ class App extends Component {
     if (history) history.push('/convert-form');
   };
 
-  directToMaleForm = () => {
-    const { history } = this.props;
-    if (history) history.push('/mens-form');
-  };
+  resetSelectedSize = () => {
+    this.setState({
+      selectedSize: 0
+    })
+  }
 
   handleSelectedProfile = (profileType, region) => {
     this.setState({
@@ -33,6 +34,12 @@ class App extends Component {
         profileId: profileType,
         regionId: region
       }
+    })
+  }
+
+  handleChangeSize = (size) => {
+    this.setState({
+      selectedSize: size
     })
   }
 
@@ -62,8 +69,11 @@ class App extends Component {
       profiles: this.state.profiles,
       letterSizes: this.state.letterSizes,
       userProfile: this.state.userProfile,
+      selectedSize: this.state.selectedSize,
+      changeSize: this.handleChangeSize,
       selectedProfile: this.handleSelectedProfile,
-      submitUserProfile: this.handleSubmitUserProfile
+      submitUserProfile: this.handleSubmitUserProfile,
+      resetSelectedSize: this.resetSelectedSize
     }
 
     return (
