@@ -7,7 +7,7 @@ export default function Reults(props) {
     const { selectedSize, userProfile, profileTypes } = useContext(FashionFitsContext)
     const userId = userProfile.profileId
     const userProfileType = findProfileType(profileTypes, userId)
-    console.log(userProfileType)
+    
     return (
         <div className='Results'>
             <section>

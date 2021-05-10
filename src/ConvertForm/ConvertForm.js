@@ -38,16 +38,14 @@ export default function ConvertForm() {
         changeSize(e.target.value)
     }
 
-    console.log(selectedRadio)
-
     return (
-        <div className='WomensForm'>
+        <div className='ConvertFormPage'>
             <section className="User_fit">
                 <h1>Your Fit: {userSelectedProfile.fit}</h1>
                 <p>{userSelectedProfile.category}</p>
             </section>
             <section className="Conversion">
-                <form className="Womens-convert-form">
+                <form className="Convert-form">
                     <div className="Size-select">
                         <input
                             type="radio"
@@ -82,7 +80,7 @@ export default function ConvertForm() {
                     </div>
                 </form>
             </section>
-            <section className="Womens-results">
+            <section className="Convert-results">
                 <Results convertProfile={userConvertProfile} />
             </section>
         </div>

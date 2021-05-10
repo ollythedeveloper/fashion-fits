@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import FashionFitsContext from '../FashionFitsContext';
+import './Home.css';
 
 export default function Home() {
     const { profileTypes, regions, submitUserProfile, selectedProfile } = useContext(FashionFitsContext)
@@ -35,9 +36,8 @@ export default function Home() {
             </section>
             <section className="Intro">
                 <h2>Find your size anywhere!</h2>
-                <p>Online shopping...</p>
-                <p>Overseas...</p>
-                <p>Letter to numbers...</p>
+                <p>Easily convert your size to its equivalence in other countries.</p>
+                <p>Select your gender and region.</p>
             </section>
             <section className="Form">
                 <form className="Gender-Region-Form" onSubmit={handleSubmit}>

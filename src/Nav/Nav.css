@@ -1,0 +1,12 @@
+.Nav {
+    background-color: gainsboro;
+    padding: 4% 0;
+}
+
+.Nav p {
+    margin-left: 40px;
+}
+
+.Nav a {
+    text-decoration: none;
+}

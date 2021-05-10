@@ -45,7 +45,7 @@ export default {
         {
             "profileId": "1",
             "regionId": "37bf77ad-7b29-497f-8270-8aa35059d223",
-            "fit": "UK - Wommens",
+            "fit": "UK - Womens",
             "category": "Pants, Dresses, Skirts, Coats, and Jackets",
             "numberSizes": ["2 - 4", "6 - 8", "10 -12", "14 - 16", "18 - 20", "22 - 24", "26 - 28"],
             "results": "the UK"
@@ -63,7 +63,7 @@ export default {
             "regionId": "670a3bc6-61b9-450d-813c-65e64bd64940",
             "fit": "USA - Mens",
             "category": "T-shirts, Jackets, and Tank Tops",
-            "numberSizes": ["1", "2", "3", "4", "5", "6", "7"],
+            "numberSizes": ["32", "34 - 36", "38 - 40", "42 - 44", "46", "48", "50"],
             "results": "the USA"
         },
         {
@@ -71,7 +71,7 @@ export default {
             "regionId": "37bf77ad-7b29-497f-8270-8aa35059d223",
             "fit": "UK - Mens",
             "category": "T-shirts, Jackets, and Tank Tops",
-            "numberSizes": ["1", "2", "3", "4", "5", "6", "7"],
+            "numberSizes": ["32", "34 - 36", "38 - 40", "42 - 44", "46", "48", "50"],
             "results": "the UK"
         },
         {
@@ -79,7 +79,7 @@ export default {
             "regionId": "4ced9f24-e626-42df-aeaf-cf147748b70a",
             "fit": "Japan - Mens",
             "category": "T-shirts, Jackets, and Tank Tops",
-            "numberSizes": ["1", "2", "3", "4", "5", "6", "7"],
+            "numberSizes": ["27.25", "36 - 38", "40 - 42", "44 - 46", "48", "50", "52"],
             "results": "Japan"
         }
     ],

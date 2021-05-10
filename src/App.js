@@ -6,6 +6,7 @@ import ConvertForm from './ConvertForm/ConvertForm';
 import Footer from './Footer/Footer';
 import store from './dummyStore';
 import FashionFitsContext from './FashionFitsContext';
+import './App.css';
 
 class App extends Component {
   state = {
