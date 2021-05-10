@@ -1,4 +1,4 @@
-export default {
+const store =  {
     "profileTypes": [
         {
             "id": "1",
@@ -84,3 +84,5 @@ export default {
         }
     ],
 }
+
+export default store;
