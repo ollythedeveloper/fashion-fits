@@ -5,7 +5,7 @@ import Results from '../Results/Results';
 import './ConvertForm.css';
 
 export default function ConvertForm() {
-    const { userProfile, profiles, letterSizes, regions, selectedSize, changeSize } = useContext(FashionFitsContext)
+    const { userProfile, profiles, letterSizes, regions, changeSize } = useContext(FashionFitsContext)
     const [convertRegion, setConvertRegion] = useState(regions[0].id)
     const [selectedRadio, setSelectedRadio] = useState("letter")
 
