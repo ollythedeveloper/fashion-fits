@@ -6,6 +6,7 @@ import ConvertForm from './ConvertForm/ConvertForm';
 import Footer from './Footer/Footer';
 import store from './dummyStore';
 import FashionFitsContext from './FashionFitsContext';
+import config from './config';
 import './App.css';
 
 class App extends Component {
@@ -32,8 +33,8 @@ class App extends Component {
   handleSelectedProfile = (profileType, region) => {
     this.setState({
       userProfile: {
-        profileId: profileType,
-        regionId: region
+        profiletype_id: profileType,
+        region_id: region
       }
     })
   }
@@ -52,15 +53,42 @@ class App extends Component {
     this.setState({
       letterSizes: store.letterSizes
     })
-    this.setState({
-      profileTypes: store.profileTypes
-    })
-    this.setState({
-      regions: store.regions
-    })
-    this.setState({
-      profiles: store.profiles
-    })
+    Promise.all([
+      fetch(`${config.API_PROFILE_TYPES_URL}`, {
+        method: 'GET',
+        headers: {
+          'Authorization': `Bearer ${config.API_KEY}`
+        }
+      }),
+      fetch(`${config.API_REGIONS_URL}`, {
+        method: 'GET',
+        headers: {
+          'Authorization': `Bearer ${config.API_KEY}`
+        }
+      }),
+      fetch(`${config.API_PROFILES_URL}`, {
+        method: 'GET',
+        headers: {
+          'Authorization': `Bearer ${config.API_KEY}`
+        }
+      })
+    ])
+      .then(([profileTypesRes, regionsRes, profilesRes]) => {
+        if(!profileTypesRes.ok)
+          return profileTypesRes.json().then(e => Promise.reject(e));
+        if(!regionsRes.ok)
+          return regionsRes.json().then(e => Promise.reject(e));
+        if(!profilesRes.ok)
+          return profilesRes.json().then(e => Promise.reject(e));
+
+        return Promise.all([profileTypesRes.json(), regionsRes.json(), profilesRes.json()]);
+      })
+      .then(([profileTypes, regions, profiles]) => {
+        this.setState({ profileTypes, regions, profiles });
+      })
+      .catch(error => {
+        console.error({ error })
+      });
   }
 
   render() {

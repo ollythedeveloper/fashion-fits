@@ -6,15 +6,15 @@ import './ConvertForm.css';
 
 export default function ConvertForm() {
     const { userProfile, profiles, letterSizes, regions, changeSize } = useContext(FashionFitsContext)
-    const [convertRegion, setConvertRegion] = useState(regions[0].id)
+    const [convertRegion, setConvertRegion] = useState(regions[0].id.toString())
     const [selectedRadio, setSelectedRadio] = useState("letter")
 
-    const userId = userProfile.profileId
-    const userRegion = userProfile.regionId
+    const userId = userProfile.profiletype_id
+    const userRegion = userProfile.region_id
     const userSelectedProfile = findProfile(profiles, userId, userRegion)
     const userConvertProfile = findProfile(profiles, userId, convertRegion)
 
-    const numberOpts = userSelectedProfile.numberSizes.map(
+    const numberOpts = userSelectedProfile.number_sizes.map(
         (numberSize, i) => <option value={i} key={i}>{numberSize}</option>
     )
 
