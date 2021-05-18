@@ -1,6 +1,7 @@
 module.exports = {
-    API_PROFILE_TYPES_URL: `http://localhost:8000/api/profileTypes`,
-    API_REGIONS_URL: `http://localhost:8000/api/regions`,
-    API_PROFILES_URL: `http://localhost:8000/api/profiles`,
-    API_KEY: '109ac7c6-8fbf-4c9f-bee4-424db00f1c15'
+    API_PROFILE_TYPES_URL: `https://mysterious-ocean-47868.herokuapp.com/api/profileTypes`,
+    API_REGIONS_URL: `https://mysterious-ocean-47868.herokuapp.com/api/regions`,
+    API_PROFILES_URL: `https://mysterious-ocean-47868.herokuapp.com/api/profiles`,
+    // API_KEY: process.env.REACT_APP_API_KEY
+    API_KEY: '7f58d47c-9a92-490f-93bc-3a5abbf14cae'
 }
