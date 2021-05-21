@@ -37,12 +37,12 @@ export default function Home() {
             <section className="Intro">
                 <h2>Find your size anywhere!</h2>
                 <p>Easily convert your size to its equivalence in other countries.</p>
-                <p>Select your gender and region.</p>
+                <p>Select your size profile and region.</p>
             </section>
             <section className="Form">
                 <form className="Gender-Region-Form" onSubmit={handleSubmit}>
                     <div className="Gender-select">
-                        <label htmlFor="gender">Gender: </label>
+                        <label htmlFor="gender">Size Profile: </label>
                         <select name="gender" id="gender" onChange={handleChangeProfile} required>
                             <option value=''>Select</option>
                             {profileOpts}
@@ -56,6 +56,7 @@ export default function Home() {
                         </select>
                     </div>
                     <div className="Button-container">
+                        <br/>
                         <button type="submit">Submit</button>
                     </div>
                 </form>
