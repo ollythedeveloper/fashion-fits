@@ -26,6 +26,16 @@ export default function ConvertForm() {
         (region, i) => <option value={region.id} key={i}>{region.country}</option>
     );
 
+    const showSizeType = () => {
+        if(selectedRadio === 'letter') {
+            return letterOpts 
+        } else {
+            return numberOpts
+        }
+    }
+
+    const sizeOpts = showSizeType();
+
     const handleConvertRegion = e => {
         setConvertRegion(e.target.value)
     }
@@ -63,12 +73,7 @@ export default function ConvertForm() {
                         {' '}
 
                         <select onChange={handleChangeSize}>
-                            <optgroup disabled={selectedRadio === "number"}>
-                            {letterOpts}
-                            </optgroup>
-                            <optgroup disabled={selectedRadio === "letter"}>
-                            {numberOpts}
-                            </optgroup>
+                            {sizeOpts}
                         </select>
                     </div>
                     <div className="Convert-select">
