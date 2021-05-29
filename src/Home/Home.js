@@ -48,6 +48,7 @@ export default function Home() {
                             {profileOpts}
                         </select>
                     </div>
+                    <br/>
                     <div className="Region-select">
                         <label htmlFor="region">Region: </label>
                         <select name="region" id="region" onChange={handleChangeRegion} required>

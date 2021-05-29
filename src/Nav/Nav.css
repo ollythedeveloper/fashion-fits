@@ -5,6 +5,10 @@
 
 .Nav p {
     margin-left: 40px;
+    font-family: 'Berkshire Swash', 'Pattaya', sans-serif;
+    font-size: 25px;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 .Nav a {

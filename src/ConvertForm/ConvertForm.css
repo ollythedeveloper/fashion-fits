@@ -4,7 +4,14 @@
 .hidden {
     display: none;
 }
+.ConvertFormPage h1, h2{
+    font-family: 'Berkshire Swash', 'Pattaya', sans-serif;
+    font-size: 30px;
+}
 
+.ConvertFormPage p, select{
+    font-family: 'Roboto Slab', serif;
+}
 .radio_container {
     margin: 10px;
 }
@@ -19,7 +26,7 @@
     display: inline-block;
     background-color: #ddd;
     padding: 10px 20px;
-    font-family: fantasy;
+    font-family: 'Roboto Slab', serif;
     font-size: 16px;
     border: 2px solid #444;
     border-radius: 5px;
@@ -34,8 +41,8 @@
 }
 
 .radio_container input[type="radio"]:checked + label {
-    background-color: #bfb;
-    border-color: #4c4;
+    background-color: #CBF6E3;
+    border-color: #63E3AA;
 }
 
 #size-scroll{

@@ -3,10 +3,48 @@
 }
 
 .Home h1 {
-    font-size: 50px;
+    font-size: 60px;
+    font-family: 'Berkshire Swash','Pattaya', sans-serif;
+    margin-bottom: 0px;
+}
+
+.Home h2, p, label, select {
+    font-family: 'Roboto Slab', serif;
+}
+
+.Home p{
+    color: #464F51;
+    font-size: 20px;
 }
 
 .Form {
     margin-top: 30px;
     margin-bottom: 40px;
+}
+.Home label {
+    font-size: 25px;
+}
+.Home select{
+    border: 2px solid #63E3AA;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 15px;
+    color: #464F51;
+}
+
+.Home button {
+    font-family: 'Roboto Slab', serif;
+    font-size: 20px;
+    background-color: #CBF6E3;
+    color: black;
+    padding: 8px;
+    border: 3px solid #63E3AA;
+    text-align: center;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.Home button:hover{
+    background-color: white;
 }

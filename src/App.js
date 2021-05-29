@@ -112,7 +112,7 @@ class App extends Component {
           <nav className="App__nav">
             <Nav />
           </nav>
-          <main className="App__main" onload={this.init}>
+          <main className="App__main">
             <Switch>
               <Route exact path='/' component={Home} />
               <Route path='/convert-form' component={ConvertForm} />
