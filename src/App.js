@@ -74,11 +74,11 @@ class App extends Component {
       })
     ])
       .then(([profileTypesRes, regionsRes, profilesRes]) => {
-        if(!profileTypesRes.ok)
+        if (!profileTypesRes.ok)
           return profileTypesRes.json().then(e => Promise.reject(e));
-        if(!regionsRes.ok)
+        if (!regionsRes.ok)
           return regionsRes.json().then(e => Promise.reject(e));
-        if(!profilesRes.ok)
+        if (!profilesRes.ok)
           return profilesRes.json().then(e => Promise.reject(e));
 
         return Promise.all([profileTypesRes.json(), regionsRes.json(), profilesRes.json()]);
@@ -106,12 +106,13 @@ class App extends Component {
     }
 
     return (
+
       <FashionFitsContext.Provider value={contextValue}>
         <div className="App">
           <nav className="App__nav">
             <Nav />
           </nav>
-          <main className="App__main">
+          <main className="App__main" onload={this.init}>
             <Switch>
               <Route exact path='/' component={Home} />
               <Route path='/convert-form' component={ConvertForm} />

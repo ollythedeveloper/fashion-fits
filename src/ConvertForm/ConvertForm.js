@@ -56,8 +56,9 @@ export default function ConvertForm() {
             </section>
             <section className="Conversion">
                 <form className="Convert-form">
+                <div className="scroll-group">
+                    <div className="scroll-item">
                     <div className="Size-select">
-
                         <div className="radio_container">
                             <h2>Size:</h2>
                             <input
@@ -86,12 +87,16 @@ export default function ConvertForm() {
                             {sizeOpts}
                         </select>
                     </div>
+                    </div>
+                    <div className="scroll-item">
                     <div className="Convert-select">
                         <h2>Convert Region: </h2>
                         {/* <label htmlFor="convert_region">Region: </label> */}
-                        <select name="convert_region" id="convert_region" size="4" onChange={handleConvertRegion}>
+                        <select name="convert_region" id="convert_region" size="6" onChange={handleConvertRegion}>
                             {regionOpts}
                         </select>
+                    </div>
+                    </div>
                     </div>
                 </form>
             </section>
