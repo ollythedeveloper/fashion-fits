@@ -2,7 +2,7 @@
     text-align: center;
 }
 
-.Header{
+.Header {
     padding: 40px;
 }
 
@@ -16,7 +16,7 @@
     font-family: 'Roboto Slab', serif;
 }
 
-.Home p{
+.Home p {
     color: #464F51;
     font-size: 20px;
 }
@@ -28,7 +28,7 @@
 .Home label {
     font-size: 25px;
 }
-.Home select{
+.Home select {
     border: 2px solid #63E3AA;
     border-radius: 5px;
     padding: 5px;
@@ -51,7 +51,7 @@
     box-shadow: 0 9px #999;
 }
 
-.Home button:hover{
+.Home button:hover {
     background-color: white;
 }
 
@@ -67,7 +67,7 @@
     margin-bottom: 0px;
 }
 
-.item{
+.item {
     flex: 1;
     margin: 5px;
     padding: 10px;

@@ -8,6 +8,11 @@ Backend Repo: [Fashion Fits API](https://github.com/ollythedeveloper/fashion-fit
 
 Screenshots
 -----------
+Landing Page:
+![landingPage](images/FF_Landing.png)
+
+Convert/Result Page:
+![convertResultPage](images/FF_Convert-Result.png)
 
 Technology Used
 ---------------

@@ -1,8 +1,8 @@
-import React, { useContext, useState } from 'react';
-import FashionFitsContext from '../FashionFitsContext';
-import { findProfile } from '../fit-helpers';
-import Results from '../Results/Results';
-import './ConvertForm.css';
+import React, { useContext, useState } from "react";
+import FashionFitsContext from "../FashionFitsContext";
+import { findProfile } from "../fit-helpers";
+import Results from "../Results/Results";
+import "./ConvertForm.css";
 
 export default function ConvertForm() {
     const { userProfile, profiles, letterSizes, regions, changeSize } = useContext(FashionFitsContext)
@@ -27,7 +27,7 @@ export default function ConvertForm() {
     );
 
     const showSizeType = () => {
-        if (selectedRadio === 'letter') {
+        if (selectedRadio === "letter") {
             return letterOpts
         } else {
             return numberOpts
@@ -49,7 +49,7 @@ export default function ConvertForm() {
     }
 
     return (
-        <div className='ConvertFormPage'>
+        <div className="ConvertFormPage">
             <section className="User_fit">
                 <h1>Your Fit: {userSelectedProfile.fit}</h1>
                 <p>{userSelectedProfile.category}</p>
@@ -91,7 +91,6 @@ export default function ConvertForm() {
                     <div className="scroll-item">
                     <div className="Convert-select">
                         <h2>Convert Region: </h2>
-                        {/* <label htmlFor="convert_region">Region: </label> */}
                         <select name="convert_region" id="convert_region" onChange={handleConvertRegion}>
                             {regionOpts}
                         </select>

@@ -1,6 +1,6 @@
-import React, { useContext } from 'react';
-import FashionFitsContext from '../FashionFitsContext';
-import { findProfileType } from '../fit-helpers';
+import React, { useContext } from "react";
+import FashionFitsContext from "../FashionFitsContext";
+import { findProfileType } from "../fit-helpers";
 
 export default function Reults(props) {
     const convertProfile = props.convertProfile;
@@ -9,14 +9,11 @@ export default function Reults(props) {
     const userProfileType = findProfileType(profileTypes, parseInt(userId))
     
     return (
-        <div className='Results'>
+        <div className="Results">
             <section>
                 <h2>Your size in {convertProfile.results} is {convertProfile.number_sizes[selectedSize]}.</h2>
                 <h3>Measurements:</h3>
                 <p>Bust: {userProfileType.bust[selectedSize]} | Waist: {userProfileType.waist[selectedSize]} | Hips: {userProfileType.hips[selectedSize]} </p>
-                {/* <p>Bust: {userProfileType.bust[selectedSize]}</p>
-                <p>Waist: {userProfileType.waist[selectedSize]}</p>
-                <p>Hips: {userProfileType.hips[selectedSize]}</p> */}
             </section>
         </div>
     )

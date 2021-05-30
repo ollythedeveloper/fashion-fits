@@ -1,7 +1,7 @@
-import React, { useContext, useState } from 'react';
-import FashionFitsContext from '../FashionFitsContext';
-import logo from './hanger1.png'
-import './Home.css';
+import React, { useContext, useState } from "react";
+import FashionFitsContext from "../FashionFitsContext";
+import logo from "./hanger1.png";
+import "./Home.css";
 
 export default function Home() {
     const { profileTypes, regions, submitUserProfile, selectedProfile } = useContext(FashionFitsContext)
@@ -31,7 +31,7 @@ export default function Home() {
     }
 
     return (
-        <div className='Home'>
+        <div className="Home">
             <header className="Header">
                 <div className="group">
                     <div className="item-double">

@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
-import { Route, Switch, withRouter } from 'react-router-dom';
-import Nav from './Nav/Nav';
-import Home from './Home/Home';
-import ConvertForm from './ConvertForm/ConvertForm';
-import Footer from './Footer/Footer';
-import store from './dummyStore';
-import FashionFitsContext from './FashionFitsContext';
-import config from './config';
-import './App.css';
+import React, { Component } from "react";
+import { Route, Switch, withRouter } from "react-router-dom";
+import Nav from "./Nav/Nav";
+import Home from "./Home/Home";
+import ConvertForm from "./ConvertForm/ConvertForm";
+import Footer from "./Footer/Footer";
+import store from "./dummyStore";
+import FashionFitsContext from "./FashionFitsContext";
+import config from "./config";
+import "./App.css";
 
 class App extends Component {
   state = {
@@ -21,7 +21,7 @@ class App extends Component {
 
   directToConvertForm = () => {
     const { history } = this.props;
-    if (history) history.push('/convert-form');
+    if (history) history.push("/convert-form");
   };
 
   resetSelectedSize = () => {
@@ -114,8 +114,8 @@ class App extends Component {
           </nav>
           <main className="App__main">
             <Switch>
-              <Route exact path='/' component={Home} />
-              <Route path='/convert-form' component={ConvertForm} />
+              <Route exact path="/" component={Home} />
+              <Route path="/convert-form" component={ConvertForm} />
             </Switch>
           </main>
           <footer className="App__footer">
