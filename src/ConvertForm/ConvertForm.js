@@ -83,7 +83,7 @@ export default function ConvertForm() {
 
                         {' '}
 
-                        <select id="size-scroll" size="4" onChange={handleChangeSize}>
+                        <select id="size-scroll" onChange={handleChangeSize}>
                             {sizeOpts}
                         </select>
                     </div>
@@ -92,7 +92,7 @@ export default function ConvertForm() {
                     <div className="Convert-select">
                         <h2>Convert Region: </h2>
                         {/* <label htmlFor="convert_region">Region: </label> */}
-                        <select name="convert_region" id="convert_region" size="6" onChange={handleConvertRegion}>
+                        <select name="convert_region" id="convert_region" onChange={handleConvertRegion}>
                             {regionOpts}
                         </select>
                     </div>

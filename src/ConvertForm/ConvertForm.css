@@ -1,9 +1,7 @@
 .ConvertFormPage {
     text-align: center;
 }
-.hidden {
-    display: none;
-}
+
 .ConvertFormPage h1, h2{
     font-family: 'Berkshire Swash', 'Pattaya', sans-serif;
     font-size: 30px;
@@ -12,6 +10,18 @@
 .ConvertFormPage p, select{
     font-family: 'Roboto Slab', serif;
 }
+
+.ConvertFormPage select{
+    border: 2px solid #63E3AA;
+    width: 80%;
+    padding: 5px;
+    color: #464F51;
+    font-size: 20px;
+    margin: 0 auto;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
 .radio_container {
     margin: 10px;
 }
@@ -25,7 +35,7 @@
 .radio_container label {
     display: inline-block;
     background-color: #ddd;
-    padding: 10px 20px;
+    padding: 4px 20px;
     font-family: 'Roboto Slab', serif;
     font-size: 16px;
     border: 2px solid #444;
@@ -43,24 +53,6 @@
 .radio_container input[type="radio"]:checked + label {
     background-color: #CBF6E3;
     border-color: #63E3AA;
-}
-
-#size-scroll{
-    position: relative;
-    width: 180px;
-    text-align: center;
-    font-size: 25px;
-    border: 2px solid #444;
-    border-radius: 5px;
-}
-
-#convert_region {
-    position: relative;
-    width: 180px;
-    text-align: center;
-    font-size: 25px;
-    border: 2px solid #444;
-    border-radius: 5px;
 }
 
 .scroll-group{

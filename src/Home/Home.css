@@ -2,6 +2,10 @@
     text-align: center;
 }
 
+.Header{
+    padding: 40px;
+}
+
 .Home h1 {
     font-size: 60px;
     font-family: 'Berkshire Swash','Pattaya', sans-serif;
@@ -30,6 +34,7 @@
     padding: 5px;
     font-size: 15px;
     color: #464F51;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
 }
 
 .Home button {
@@ -42,9 +47,50 @@
     text-align: center;
     transition-duration: 0.4s;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
 }
 
 .Home button:hover{
     background-color: white;
+}
+
+.Home button:active {
+    background-color: white;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0px;
+}
+
+.item{
+    flex: 1;
+    margin: 5px;
+    padding: 10px;
+}
+
+.item-double {
+    flex: 2;
+    margin: 5px;
+    padding: 10px;
+}
+
+.item img {
+    width: 60%;
+    margin: 0;
+    padding: 0;
+}
+
+@media all and (min-width: 800px) {
+
+    .Home h1 {
+        font-size: 90px;
+    }
+    .group{
+        flex-direction: row;
+    }
 }

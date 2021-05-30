@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import FashionFitsContext from '../FashionFitsContext';
+import logo from './hanger1.png'
 import './Home.css';
 
 export default function Home() {
@@ -31,9 +32,16 @@ export default function Home() {
 
     return (
         <div className='Home'>
-            <section className="Header">
-                <h1>Fashion Fits</h1>
-            </section>
+            <header className="Header">
+                <div className="group">
+                    <div className="item-double">
+                        <h1>Fashion Fits</h1>
+                    </div>
+                    <div className="item">
+                        <img src={logo} alt={'logo'} />
+                    </div>
+                </div>
+            </header>
             <section className="Intro">
                 <h2>Find your size anywhere!</h2>
                 <p>Easily convert your size to its equivalence in other countries.</p>
@@ -48,7 +56,7 @@ export default function Home() {
                             {profileOpts}
                         </select>
                     </div>
-                    <br/>
+                    <br />
                     <div className="Region-select">
                         <label htmlFor="region">Region: </label>
                         <select name="region" id="region" onChange={handleChangeRegion} required>
@@ -57,7 +65,7 @@ export default function Home() {
                         </select>
                     </div>
                     <div className="Button-container">
-                        <br/>
+                        <br />
                         <button type="submit">Submit</button>
                     </div>
                 </form>

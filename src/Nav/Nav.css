@@ -14,3 +14,7 @@
 .Nav a {
     text-decoration: none;
 }
+
+.Nav img{
+    height: 100px;
+}
