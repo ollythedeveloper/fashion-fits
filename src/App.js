@@ -14,7 +14,6 @@ class App extends Component {
   state = {
     profileTypes: [],
     letterSizes: [],
-    numberSizes: [],
     regions: [],
     profiles: [],
     userProfile: [],
@@ -124,7 +123,6 @@ class App extends Component {
       regions: this.state.regions,
       profiles: this.state.profiles,
       letterSizes: this.state.letterSizes,
-      numberSizes: this.state.numberSizes,
       userProfile: this.state.userProfile,
       userSelectedPro: this.state.userSelectedPro,
       selectedSize: this.state.selectedSize,

@@ -5,7 +5,6 @@ const FashionFitsContext = React.createContext({
   regions: [],
   profiles: [],
   letterSizes: [],
-  numberSizes: [],
   userProfile: [],
   userSelectedPro: {},
   selectedSize: Number,
