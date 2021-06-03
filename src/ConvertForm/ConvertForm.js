@@ -25,7 +25,7 @@ export default function ConvertForm() {
     const letterOpts = letterSizes.map(
         (letterSize, i) => <option value={i} key={i}>{letterSize}</option>
     )
-    
+
     //creates selection options from the available regions
     const regionOpts = regions.map(
         (region, i) => <option value={region.id} key={i}>{region.country}</option>
@@ -63,46 +63,46 @@ export default function ConvertForm() {
             </section>
             <section className="Conversion">
                 <form className="Convert-form">
-                <div className="scroll-group">
-                    <div className="scroll-item">
-                    <div className="Size-select">
-                        <div className="radio_container">
-                            <h2>Size:</h2>
-                            <input
-                                type="radio"
-                                className="toggle_option"
-                                name="size-type"
-                                id="letter-toggle"
-                                value="letter"
-                                defaultChecked
-                                onChange={handleChangeRadio} />
-                            <label htmlFor="letter-toggle">Letter</label>
+                    <div className="scroll-group">
+                        <div className="scroll-item">
+                            <div className="Size-select">
+                                <div className="radio_container">
+                                    <h2>Size:</h2>
+                                    <input
+                                        type="radio"
+                                        className="toggle_option"
+                                        name="size-type"
+                                        id="letter-toggle"
+                                        value="letter"
+                                        defaultChecked
+                                        onChange={handleChangeRadio} />
+                                    <label htmlFor="letter-toggle">Letter</label>
 
-                            <input
-                                type="radio"
-                                className="toggle_option"
-                                name="size-type"
-                                id="number-toggle"
-                                value="number"
-                                onChange={handleChangeRadio} />
-                            <label htmlFor="number-toggle">Number</label>
+                                    <input
+                                        type="radio"
+                                        className="toggle_option"
+                                        name="size-type"
+                                        id="number-toggle"
+                                        value="number"
+                                        onChange={handleChangeRadio} />
+                                    <label htmlFor="number-toggle">Number</label>
+                                </div>
+
+                                {' '}
+
+                                <select id="size-scroll" onChange={handleChangeSize}>
+                                    {sizeOpts}
+                                </select>
+                            </div>
                         </div>
-
-                        {' '}
-
-                        <select id="size-scroll" onChange={handleChangeSize}>
-                            {sizeOpts}
-                        </select>
-                    </div>
-                    </div>
-                    <div className="scroll-item">
-                    <div className="Convert-select">
-                        <h2>Convert Region: </h2>
-                        <select name="convert_region" id="convert_region" onChange={handleConvertRegion}>
-                            {regionOpts}
-                        </select>
-                    </div>
-                    </div>
+                        <div className="scroll-item">
+                            <div className="Convert-select">
+                                <h2>Convert Region: </h2>
+                                <select name="convert_region" id="convert_region" onChange={handleConvertRegion}>
+                                    {regionOpts}
+                                </select>
+                            </div>
+                        </div>
                     </div>
                 </form>
             </section>

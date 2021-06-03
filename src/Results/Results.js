@@ -5,7 +5,6 @@ import { findProfileType } from "../fit-helpers";
 export default function Reults(props) {
     //prop takes convertProfile from the ConvertForm
     const convertProfile = props.convertProfile;
-    
     const { selectedSize, userProfile, profileTypes } = useContext(FashionFitsContext)
     const userId = userProfile.profiletype_id
 
