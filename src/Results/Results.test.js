@@ -15,12 +15,12 @@ it('renders without crashing', () => {
         results: "the USA"
     };
     
-    // const div = document.createElement('div');
-    // ReactDOM.render(
-    //     <BrowserRouter>
-    //         <Results convertProfile={convertProfile} />
-    //     </BrowserRouter>,
-    //     div
-    // );
-    // ReactDOM.unmountComponentAtNode(div)
+    const div = document.createElement('div');
+    ReactDOM.render(
+        <BrowserRouter>
+            <Results convertProfile={convertProfile} />
+        </BrowserRouter>,
+        div
+    );
+    ReactDOM.unmountComponentAtNode(div)
 });

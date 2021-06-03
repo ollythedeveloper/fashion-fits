@@ -7,7 +7,6 @@ import store from '../dummyStore';
 it('renders without crashing', () => {
     // const userSelectedProfile = store.profiles[0]
     // console.log(userSelectedProfile)
-    
     // const div = document.createElement('div');
     // ReactDOM.render(
     //     <BrowserRouter>
