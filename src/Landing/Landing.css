@@ -12,11 +12,11 @@
     margin-bottom: 0px;
 }
 
-.Landing h2, p {
+.Landing h2, p, ol li {
     font-family: 'Roboto Slab', serif;
 }
 
-.Landing p {
+.Landing p, ol li {
     color: #464F51;
     font-size: 20px;
 }
