@@ -46,7 +46,7 @@ export default function Landing() {
                             <li>Select your size profile and region.</li>
                             <li>Once submitted, you will arrive at the Conversion Page.</li>
                             <li>Enter the size you want to convert. (<i>You can choose between letter or number sizes.</i>)</li>
-                            <li>Select the country you want to covert your size into.</li>
+                            <li>Select the country you want to convert your size into.</li>
                             <li>You will get the converted number size as well as the measurements in inches.</li>
                         </ol>
                         <p>HAPPY SHOPPING!!!</p>

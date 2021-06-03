@@ -21,6 +21,11 @@
     font-size: 20px;
 }
 
+.Landing ol li {
+    padding-bottom: 10px;
+    text-align: left;
+}
+
 .Landing button {
     font-family: 'Roboto Slab', serif;
     font-size: 20px;
