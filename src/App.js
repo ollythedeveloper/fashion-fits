@@ -19,14 +19,14 @@ class App extends Component {
     userProfile: [],
     userSelectedPro: {
       id: 100,
-      profiletype_id: "200",
-      region_id: "300",
-      fit: "The Fit",
-      category: "The Category",
-      number_sizes: ["1", "2", "3", "4", "5", "6", "7"],
-      results: "the results"
-  },
-    selectedSize: 0
+      profiletype_id: '200',
+      region_id: '300',
+      fit: 'The Fit',
+      category: 'The Category',
+      number_sizes: ['1', '2', '3', '4', '5', '6', '7'],
+      results: 'the results',
+    },
+    selectedSize: 0,
   };
 
   directToConvertForm = () => {
@@ -36,29 +36,29 @@ class App extends Component {
 
   resetSelectedSize = () => {
     this.setState({
-      selectedSize: 0
+      selectedSize: 0,
     });
   };
 
-  //creates userProfile variable from the region and profiletype selected by the user
+  // creates userProfile variable from the region and profiletype selected by the user
   handleSelectedProfile = (profileType, region) => {
     this.setState({
       userProfile: {
         profiletype_id: profileType,
-        region_id: region
-      }
+        region_id: region,
+      },
     });
   };
 
   handleSelectedPro = (profile) => {
     this.setState({
-      userSelectedPro: profile
+      userSelectedPro: profile,
     });
   };
 
   handleChangeSize = (size) => {
     this.setState({
-      selectedSize: size
+      selectedSize: size,
     });
   };
 
@@ -68,36 +68,36 @@ class App extends Component {
 
   handleUserNumberSizes = (sizes) => {
     this.setState({
-      numberSizes: sizes
-    })
+      numberSizes: sizes,
+    });
   };
 
-  //GET requests to Fashion Fits API
-  //the data populates the profileTypes, regions and profiles arrays in the state
-  //the letterSize array is populated from the store
+  // GET requests to Fashion Fits API
+  // the data populates the profileTypes, regions and profiles arrays in the state
+  // the letterSize array is populated from the store
   componentDidMount() {
     this.setState({
-      letterSizes: store.letterSizes
+      letterSizes: store.letterSizes,
     });
     Promise.all([
       fetch(`${config.API_PROFILE_TYPES_URL}`, {
         method: 'GET',
         headers: {
-          'Authorization': `Bearer ${config.API_KEY}`
-        }
+          'Authorization': `Bearer ${config.API_KEY}`,
+        },
       }),
       fetch(`${config.API_REGIONS_URL}`, {
         method: 'GET',
         headers: {
-          'Authorization': `Bearer ${config.API_KEY}`
-        }
+          'Authorization': `Bearer ${config.API_KEY}`,
+        },
       }),
       fetch(`${config.API_PROFILES_URL}`, {
         method: 'GET',
         headers: {
-          'Authorization': `Bearer ${config.API_KEY}`
-        }
-      })
+          'Authorization': `Bearer ${config.API_KEY}`,
+        },
+      }),
     ])
       .then(([profileTypesRes, regionsRes, profilesRes]) => {
         if (!profileTypesRes.ok)
@@ -113,7 +113,7 @@ class App extends Component {
         this.setState({ profileTypes, regions, profiles });
       })
       .catch(error => {
-        console.error({ error })
+        console.error({ error });
       });
   }
 
@@ -131,8 +131,8 @@ class App extends Component {
       selectedPro: this.handleSelectedPro,
       submitUserProfile: this.handleSubmitUserProfile,
       userNumberSizes: this.handleUserNumberSizes,
-      resetSelectedSize: this.resetSelectedSize
-    }
+      resetSelectedSize: this.resetSelectedSize,
+    };
 
     return (
 
