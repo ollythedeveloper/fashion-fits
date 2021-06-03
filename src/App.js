@@ -1,14 +1,14 @@
-import React, { Component } from "react";
-import { Route, Switch, withRouter } from "react-router-dom";
-import Nav from "./Nav/Nav";
-import Landing from "./Landing/Landing";
-import Home from "./Home/Home";
-import ConvertForm from "./ConvertForm/ConvertForm";
-import Footer from "./Footer/Footer";
-import store from "./dummyStore";
-import FashionFitsContext from "./FashionFitsContext";
-import config from "./config";
-import "./App.css";
+import React, { Component } from 'react';
+import { Route, Switch, withRouter } from 'react-router-dom';
+import Nav from './Nav/Nav';
+import Landing from './Landing/Landing';
+import Home from './Home/Home';
+import ConvertForm from './ConvertForm/ConvertForm';
+import Footer from './Footer/Footer';
+import store from './dummyStore';
+import FashionFitsContext from './FashionFitsContext';
+import config from './config';
+import './App.css';
 
 class App extends Component {
   state = {
@@ -22,13 +22,13 @@ class App extends Component {
 
   directToConvertForm = () => {
     const { history } = this.props;
-    if (history) history.push("/convert-form");
+    if (history) history.push('/convert-form');
   };
 
   resetSelectedSize = () => {
     this.setState({
       selectedSize: 0
-    })
+    });
   }
 
   //creates userProfile variable from the region and profiletype selected by the user
@@ -38,17 +38,17 @@ class App extends Component {
         profiletype_id: profileType,
         region_id: region
       }
-    })
+    });
   }
 
   handleChangeSize = (size) => {
     this.setState({
       selectedSize: size
-    })
+    });
   }
 
   handleSubmitUserProfile = () => {
-    this.directToConvertForm()
+    this.directToConvertForm();
   }
 
   //GET requests to Fashion Fits API
@@ -57,7 +57,7 @@ class App extends Component {
   componentDidMount() {
     this.setState({
       letterSizes: store.letterSizes
-    })
+    });
     Promise.all([
       fetch(`${config.API_PROFILE_TYPES_URL}`, {
         method: 'GET',

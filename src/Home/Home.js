@@ -1,39 +1,41 @@
-import React, { useContext, useState } from "react";
-import FashionFitsContext from "../FashionFitsContext";
-import logo from "./hanger1.png";
-import "./Home.css";
+import React, { useContext, useState } from 'react';
+import FashionFitsContext from '../FashionFitsContext';
+import logo from './hanger1.png';
+import './Home.css';
 
 export default function Home() {
-    const { profileTypes, regions, submitUserProfile, selectedProfile } = useContext(FashionFitsContext)
+  const {
+    profileTypes, regions, submitUserProfile, selectedProfile,
+  } = useContext(FashionFitsContext);
 
-    const [selectProfile, setSelectProfile] = useState('')
-    const [selectRegion, setSelectRegion] = useState('')
+  const [selectProfile, setSelectProfile] = useState('');
+  const [selectRegion, setSelectRegion] = useState('');
 
-    //creates selection options from the available profileTypes
-    const profileOpts = profileTypes.map(
-        (profileType, i) => <option value={profileType.id} key={i}>{profileType.name}</option>
-    );
+  // creates selection options from the available profileTypes
+  const profileOpts = profileTypes.map(
+    (profileType, i) => <option value={profileType.id} key={i}>{profileType.name}</option>,
+  );
 
-    //creates selection options from the available regions
-    const regionOpts = regions.map(
-        (region, i) => <option value={region.id} key={i}>{region.country}</option>
-    );
+  // creates selection options from the available regions
+  const regionOpts = regions.map(
+    (region, i) => <option value={region.id} key={i}>{region.country}</option>,
+  );
 
-    //sets userprofile values and directs them to the convert form page
-    const handleSubmit = e => {
-        e.preventDefault();
-        selectedProfile(selectProfile, selectRegion);
-        submitUserProfile();
-    }
+  // sets userprofile values and directs them to the convert form page
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    selectedProfile(selectProfile, selectRegion);
+    submitUserProfile();
+  };
 
-    const handleChangeRegion = e => {
-        setSelectRegion(e.target.value)
-    }
-    const handleChangeProfile = e => {
-        setSelectProfile(e.target.value)
-    }
+  const handleChangeRegion = (e) => {
+    setSelectRegion(e.target.value);
+  };
+  const handleChangeProfile = (e) => {
+    setSelectProfile(e.target.value);
+  };
 
-    return (
+  return (
         <div className="Home">
             <header className="Header">
                 <div className="group">
@@ -74,5 +76,5 @@ export default function Home() {
                 </form>
             </section>
         </div>
-    )
+  );
 }

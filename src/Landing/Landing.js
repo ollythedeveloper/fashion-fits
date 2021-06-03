@@ -1,19 +1,19 @@
-import React from "react";
-import { useHistory } from "react-router-dom";
-import travel from "./travel2.png";
-import hooray from "./happyShop.png";
-import "./Landing.css";
+import React from 'react';
+import { useHistory } from 'react-router-dom';
+import travel from './travel2.png';
+import hooray from './happyShop.png';
+import './Landing.css';
 
 export default function Landing() {
-    const history = useHistory();
+  const history = useHistory();
 
-    //directs user to homepage on button click
-    const handleStart = e => {
-        e.preventDefault();
-        history.push("/home");
-    }
+  // directs user to homepage on button click
+  const handleStart = (e) => {
+    e.preventDefault();
+    history.push('/home');
+  };
 
-    return (
+  return (
         <div className="Landing">
             <header className="LP-Header">
                 <div className="group">
@@ -44,7 +44,8 @@ export default function Landing() {
                         <ol>
                             <li>Select your size profile and region.</li>
                             <li>Select the size and the country you want to convert it to.</li>
-                            <li>Receive the converted number size, as well as the measurements in inches.</li>
+                            <li>Receive the converted number size,
+                                as well as the measurements in inches.</li>
                         </ol>
                         <p>HAPPY SHOPPING!!!</p>
                     </div>
@@ -55,5 +56,5 @@ export default function Landing() {
             </section>
             <button type="submit" onClick={handleStart}>Start</button>
         </div>
-    );
+  );
 }

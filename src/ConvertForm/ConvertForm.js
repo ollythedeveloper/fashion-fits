@@ -1,61 +1,62 @@
-import React, { useContext, useState } from "react";
-import FashionFitsContext from "../FashionFitsContext";
-import { findProfile } from "../fit-helpers";
-import Results from "../Results/Results";
-import "./ConvertForm.css";
+import React, { useContext, useState } from 'react';
+import FashionFitsContext from '../FashionFitsContext';
+import { findProfile } from '../fit-helpers';
+import Results from '../Results/Results';
+import './ConvertForm.css';
 
 export default function ConvertForm() {
-    const { userProfile, profiles, letterSizes, regions, changeSize } = useContext(FashionFitsContext)
-    const [convertRegion, setConvertRegion] = useState("1")
-    const [selectedRadio, setSelectedRadio] = useState("letter")
+  const {
+    userProfile, profiles, letterSizes, regions, changeSize,
+  } = useContext(FashionFitsContext);
+  const [convertRegion, setConvertRegion] = useState('1');
+  const [selectedRadio, setSelectedRadio] = useState('letter');
 
-    const userId = userProfile.profiletype_id
-    const userRegion = userProfile.region_id
+  const userId = userProfile.profiletype_id;
+  const userRegion = userProfile.region_id;
 
-    //findProfile helper funtion finds one profile using the users profiletypeId and region
-    const userSelectedProfile = findProfile(profiles, userId, userRegion)
-    const userConvertProfile = findProfile(profiles, userId, convertRegion)
+  // findProfile helper funtion finds one profile using the users profiletypeId and region
+  const userSelectedProfile = findProfile(profiles, userId, userRegion);
+  const userConvertProfile = findProfile(profiles, userId, convertRegion);
 
-    //creates selection options from the users number sizes, uses index as the value
-    const numberOpts = userSelectedProfile.number_sizes.map(
-        (numberSize, i) => <option value={i} key={i}>{numberSize}</option>
-    )
+  // creates selection options from the users number sizes, uses index as the value
+  const numberOpts = userSelectedProfile.number_sizes.map(
+    (numberSize, i) => <option value={i} key={i}>{numberSize}</option>,
+  );
 
-    //creates selection options from the letter sizes, uses index as the value
-    const letterOpts = letterSizes.map(
-        (letterSize, i) => <option value={i} key={i}>{letterSize}</option>
-    )
+  // creates selection options from the letter sizes, uses index as the value
+  const letterOpts = letterSizes.map(
+    (letterSize, i) => <option value={i} key={i}>{letterSize}</option>,
+  );
 
-    //creates selection options from the available regions
-    const regionOpts = regions.map(
-        (region, i) => <option value={region.id} key={i}>{region.country}</option>
-    );
+  // creates selection options from the available regions
+  const regionOpts = regions.map(
+    (region, i) => <option value={region.id} key={i}>{region.country}</option>,
+  );
 
-    //function determines if the letterOpts or numberOpts are returned
-    const showSizeType = () => {
-        if (selectedRadio === "letter") {
-            return letterOpts
-        } else {
-            return numberOpts
-        }
+  // function determines if the letterOpts or numberOpts are returned
+  const showSizeType = () => {
+    if (selectedRadio === 'letter') {
+      return letterOpts;
     }
+    return numberOpts;
+  };
 
-    //takes output from showSizeType and creates the variable sizeOpts
-    const sizeOpts = showSizeType();
+  // takes output from showSizeType and creates the variable sizeOpts
+  const sizeOpts = showSizeType();
 
-    const handleConvertRegion = e => {
-        setConvertRegion(e.target.value)
-    }
+  const handleConvertRegion = (e) => {
+    setConvertRegion(e.target.value);
+  };
 
-    const handleChangeRadio = (e) => {
-        setSelectedRadio(e.target.value);
-    }
+  const handleChangeRadio = (e) => {
+    setSelectedRadio(e.target.value);
+  };
 
-    const handleChangeSize = e => {
-        changeSize(e.target.value)
-    }
+  const handleChangeSize = (e) => {
+    changeSize(e.target.value);
+  };
 
-    return (
+  return (
         <div className="ConvertFormPage">
             <section className="User_fit">
                 <h1>Your Fit: {userSelectedProfile.fit}</h1>
@@ -110,5 +111,5 @@ export default function ConvertForm() {
                 <Results convertProfile={userConvertProfile} />
             </section>
         </div>
-    );
+  );
 }
