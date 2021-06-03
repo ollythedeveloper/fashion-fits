@@ -11,21 +11,27 @@ export default function ConvertForm() {
 
     const userId = userProfile.profiletype_id
     const userRegion = userProfile.region_id
+
+    //findProfile helper funtion finds one profile using the users profiletypeId and region
     const userSelectedProfile = findProfile(profiles, userId, userRegion)
     const userConvertProfile = findProfile(profiles, userId, convertRegion)
 
+    //creates selection options from the users number sizes, uses index as the value
     const numberOpts = userSelectedProfile.number_sizes.map(
         (numberSize, i) => <option value={i} key={i}>{numberSize}</option>
     )
 
+    //creates selection options from the letter sizes, uses index as the value
     const letterOpts = letterSizes.map(
         (letterSize, i) => <option value={i} key={i}>{letterSize}</option>
     )
-
+    
+    //creates selection options from the available regions
     const regionOpts = regions.map(
         (region, i) => <option value={region.id} key={i}>{region.country}</option>
     );
 
+    //function determines if the letterOpts or numberOpts are returned
     const showSizeType = () => {
         if (selectedRadio === "letter") {
             return letterOpts
@@ -34,6 +40,7 @@ export default function ConvertForm() {
         }
     }
 
+    //takes output from showSizeType and creates the variable sizeOpts
     const sizeOpts = showSizeType();
 
     const handleConvertRegion = e => {

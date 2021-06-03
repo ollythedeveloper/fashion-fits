@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Route, Switch, withRouter } from "react-router-dom";
 import Nav from "./Nav/Nav";
+import Landing from "./Landing/Landing";
 import Home from "./Home/Home";
 import ConvertForm from "./ConvertForm/ConvertForm";
 import Footer from "./Footer/Footer";
@@ -30,6 +31,7 @@ class App extends Component {
     })
   }
 
+  //creates userProfile variable from the region and profiletype selected by the user
   handleSelectedProfile = (profileType, region) => {
     this.setState({
       userProfile: {
@@ -49,6 +51,9 @@ class App extends Component {
     this.directToConvertForm()
   }
 
+  //GET requests to Fashion Fits API
+  //the data populates the profileTypes, regions and profiles arrays in the state
+  //the letterSize array is populated from the store
   componentDidMount() {
     this.setState({
       letterSizes: store.letterSizes
@@ -114,7 +119,8 @@ class App extends Component {
           </nav>
           <main className="App__main">
             <Switch>
-              <Route exact path="/" component={Home} />
+              <Route exact path="/" component={Landing} />
+              <Route exact path="/home" component={Home} />
               <Route path="/convert-form" component={ConvertForm} />
             </Switch>
           </main>

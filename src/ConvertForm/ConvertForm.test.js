@@ -5,6 +5,11 @@ import ConvertForm from "./ConvertForm";
 import store from '../dummyStore';
 
 it('renders without crashing', () => {
+    const userSelectedProfile = {
+        fit: 'User Fit',
+        category: 'User Category',
+        number_sizes: [1, 2, 3, 4, 5, 6, 7]
+    };
     const div = document.createElement('div');
     ReactDOM.render(
         <BrowserRouter>

@@ -9,14 +9,17 @@ export default function Home() {
     const [selectProfile, setSelectProfile] = useState('')
     const [selectRegion, setSelectRegion] = useState('')
 
+    //creates selection options from the available profileTypes
     const profileOpts = profileTypes.map(
         (profileType, i) => <option value={profileType.id} key={i}>{profileType.name}</option>
     );
 
+    //creates selection options from the available regions
     const regionOpts = regions.map(
         (region, i) => <option value={region.id} key={i}>{region.country}</option>
     );
 
+    //sets userprofile values and directs them to the convert form page
     const handleSubmit = e => {
         e.preventDefault();
         selectedProfile(selectProfile, selectRegion);
