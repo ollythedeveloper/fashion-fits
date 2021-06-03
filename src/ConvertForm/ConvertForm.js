@@ -6,20 +6,18 @@ import './ConvertForm.css';
 
 export default function ConvertForm() {
   const {
-    userProfile, profiles, letterSizes, regions, changeSize,
+    userProfile, profiles, letterSizes, regions, changeSize, userSelectedPro,
   } = useContext(FashionFitsContext);
   const [convertRegion, setConvertRegion] = useState('1');
   const [selectedRadio, setSelectedRadio] = useState('letter');
 
   const userId = userProfile.profiletype_id;
-  const userRegion = userProfile.region_id;
 
   // findProfile helper funtion finds one profile using the users profiletypeId and region
-  const userSelectedProfile = findProfile(profiles, userId, userRegion);
   const userConvertProfile = findProfile(profiles, userId, convertRegion);
 
   // creates selection options from the users number sizes, uses index as the value
-  const numberOpts = userSelectedProfile.number_sizes.map(
+  const numberOpts = userSelectedPro.number_sizes.map(
     (numberSize, i) => <option value={i} key={i}>{numberSize}</option>,
   );
 
@@ -28,7 +26,7 @@ export default function ConvertForm() {
     (letterSize, i) => <option value={i} key={i}>{letterSize}</option>,
   );
 
-  // creates selection options from the available regions
+  // creates selection options from the available regions, uses region id as value
   const regionOpts = regions.map(
     (region, i) => <option value={region.id} key={i}>{region.country}</option>,
   );
@@ -59,8 +57,8 @@ export default function ConvertForm() {
   return (
         <div className="ConvertFormPage">
             <section className="User_fit">
-                <h1>Your Fit: {userSelectedProfile.fit}</h1>
-                <p>{userSelectedProfile.category}</p>
+                <h1>Your Fit: {userSelectedPro.fit}</h1>
+                <p>{userSelectedPro.category}</p>
             </section>
             <section className="Conversion">
                 <form className="Convert-form">

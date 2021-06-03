@@ -14,8 +14,8 @@ export default function Reults(props) {
   return (
         <div className="Results">
             <section>
-                <h2>Your size in {convertProfile.results} is{' '}
-                {convertProfile.number_sizes[selectedSize]}.</h2>
+                {convertProfile && <h2>Your size in {convertProfile.results} is{' '}
+                {convertProfile.number_sizes[selectedSize]}.</h2>}
                 <h3>Measurements:</h3>
                 {userProfileType && <p>Bust: {userProfileType.bust[selectedSize]} |
                 Waist: {userProfileType.waist[selectedSize]} |

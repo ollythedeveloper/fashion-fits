@@ -5,11 +5,15 @@ const FashionFitsContext = React.createContext({
   regions: [],
   profiles: [],
   letterSizes: [],
+  numberSizes: [],
   userProfile: [],
+  userSelectedPro: {},
   selectedSize: Number,
   selectedProfile: () => {},
+  selectedPro: () => {},
   submitUserProfile: () => {},
   changeSize: () => {},
+  userNumberSizes: () => {},
   resetSelectedSize: () => {},
 });
 

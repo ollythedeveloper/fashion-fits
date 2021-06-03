@@ -1,11 +1,12 @@
 import React, { useContext, useState } from 'react';
 import FashionFitsContext from '../FashionFitsContext';
+import { findProfile } from '../fit-helpers';
 import logo from './hanger1.png';
 import './Home.css';
 
 export default function Home() {
   const {
-    profileTypes, regions, submitUserProfile, selectedProfile,
+    profileTypes, regions, profiles, submitUserProfile, selectedProfile, selectedPro,
   } = useContext(FashionFitsContext);
 
   const [selectProfile, setSelectProfile] = useState('');
@@ -24,7 +25,10 @@ export default function Home() {
   // sets userprofile values and directs them to the convert form page
   const handleSubmit = (e) => {
     e.preventDefault();
+    // creates a object with the profiletypeId and regionId
     selectedProfile(selectProfile, selectRegion);
+    // creates an object with all profile values
+    selectedPro(findProfile(profiles, selectProfile, selectRegion));
     submitUserProfile();
   };
 

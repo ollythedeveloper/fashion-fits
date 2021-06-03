@@ -14,9 +14,19 @@ class App extends Component {
   state = {
     profileTypes: [],
     letterSizes: [],
+    numberSizes: [],
     regions: [],
     profiles: [],
     userProfile: [],
+    userSelectedPro: {
+      id: 100,
+      profiletype_id: "200",
+      region_id: "300",
+      fit: "The Fit",
+      category: "The Category",
+      number_sizes: ["1", "2", "3", "4", "5", "6", "7"],
+      results: "the results"
+  },
     selectedSize: 0
   };
 
@@ -29,7 +39,7 @@ class App extends Component {
     this.setState({
       selectedSize: 0
     });
-  }
+  };
 
   //creates userProfile variable from the region and profiletype selected by the user
   handleSelectedProfile = (profileType, region) => {
@@ -39,17 +49,29 @@ class App extends Component {
         region_id: region
       }
     });
-  }
+  };
+
+  handleSelectedPro = (profile) => {
+    this.setState({
+      userSelectedPro: profile
+    });
+  };
 
   handleChangeSize = (size) => {
     this.setState({
       selectedSize: size
     });
-  }
+  };
 
   handleSubmitUserProfile = () => {
     this.directToConvertForm();
-  }
+  };
+
+  handleUserNumberSizes = (sizes) => {
+    this.setState({
+      numberSizes: sizes
+    })
+  };
 
   //GET requests to Fashion Fits API
   //the data populates the profileTypes, regions and profiles arrays in the state
@@ -102,11 +124,15 @@ class App extends Component {
       regions: this.state.regions,
       profiles: this.state.profiles,
       letterSizes: this.state.letterSizes,
+      numberSizes: this.state.numberSizes,
       userProfile: this.state.userProfile,
+      userSelectedPro: this.state.userSelectedPro,
       selectedSize: this.state.selectedSize,
       changeSize: this.handleChangeSize,
       selectedProfile: this.handleSelectedProfile,
+      selectedPro: this.handleSelectedPro,
       submitUserProfile: this.handleSubmitUserProfile,
+      userNumberSizes: this.handleUserNumberSizes,
       resetSelectedSize: this.resetSelectedSize
     }
 
